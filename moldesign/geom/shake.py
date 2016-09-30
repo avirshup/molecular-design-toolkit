@@ -98,8 +98,23 @@ def _clean_grad_array(a):
 
 
 
+def rattle_momenta(momenta, lastpos, newpos):
+    """ Corrects momenta to maintain constraints, using the RATTLE algorithm
 
+    Args:
+        array (u.Array[momentum]): original momenta
+        lastpos (u.Array[length]): original positions
+        newpos (u.Array[length]): positions after move (INCLUDING constraint corrections from SHAKE)
 
+    Returns:
+        u.Array[momentum]: modified momenta
+
+    References:
+        R. Elber, A. Ruymgaart, B. Hess: SHAKE Parallelization.
+            Eur Phys J Spec Top. 2011 Nov 1; 200(1): 211.
+            doi:10.1140/epjst/e2011-01525-9    """
+
+    raise NotImplementedError
 
 
 

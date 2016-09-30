@@ -11,6 +11,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+"""
+All classes in this module are just components of MDT's most important class, the :class:`Molecule`.
+Because this class offers a huge amount of functionality, it's been organized into a set of
+categorical mixins.
+"""
 
 import numpy as np
 

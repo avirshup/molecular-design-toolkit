@@ -95,7 +95,7 @@ class Configurator(ipy.Box):
                 if s.paramdef.relevance(self.paramlist):
                     s.layout.visibility = 'visible'
                 else:
-                    s.layout.visibility = 'hidden'
+                    s.layout.visibility = 'collapse'
 
 
 class ParamSelector(ipy.Box):
@@ -158,3 +158,14 @@ class ParamSelector(ipy.Box):
     @value.setter
     def value(self, v):
         self.selector.value = v
+
+    def display_hide(self, params):
+        if self.paramdef.relevance is None:
+            return
+
+        if self.paramdef.relevance(params):
+            self.layout.visibility = 'visible'
+        else:
+            self.layout.visibility = 'collapse'
+
+

@@ -13,6 +13,7 @@
 # limitations under the License.
 import moldesign as mdt
 
+
 class FFTerm(object):
     pass
 
@@ -46,7 +47,7 @@ class FFParameters(object):
 class ResidueTemplate(object):
     def __init__(self, mol, charges, ffparams=None, minimized_mol=None):
         self.mol = mol
-        self.charges = {atom.pdbname:charge for atom,charge in charges.iteritems()}
+        self.charges = {atom.pdbname: charge for atom,charge in charges.iteritems()}
 
         if ffparams is None:
             self.ffparams = self.get_ffparams()
