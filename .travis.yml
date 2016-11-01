@@ -29,12 +29,10 @@ before_install: # from http://conda.pydata.org/docs/travis.html
 
 
 install:
-  # The next line should only be present if the nbmolviz API is being updated; otherwise
-  # it should just be installed by pip as a normal requirement
-  - pip install git+https://github.com/Autodesk/notebook-molecular-visualization
   - conda env create
   - source activate moldesign_env
   - pip install pytest-xdist
+  - jupyter nbextension enable --sys-prefix --python nbmolviz
   - python setup.py install
 
 
