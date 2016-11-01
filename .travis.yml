@@ -26,11 +26,13 @@ before_install: # from http://conda.pydata.org/docs/travis.html
   - conda info -a
   - "mkdir ~/.moldesign && echo 'engine_type: docker' > ~/.moldesign/moldesign.yml"
   - conda install pyyaml jupyter
+  - conda env create
+  - source activate moldesign_env
 
 
 install:
-  - conda env create
-  - source activate moldesign_env
+  - pip install git+https://github.com/Autodesk/notebook-molecular-visualization
+  - pip install .
   - pip install pytest-xdist
   - jupyter nbextension enable --sys-prefix --python nbmolviz
   - python setup.py install
