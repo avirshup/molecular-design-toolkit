@@ -111,9 +111,6 @@ class DotDict(object):
     def __init__(self, *args, **kwargs):
         self.update(dict(*args, **kwargs))
 
-    def __reduce__(self):
-        return DotDict, self.items()
-
     def __getattr__(self, item):
         return getattr(self.__dict__, item)
 

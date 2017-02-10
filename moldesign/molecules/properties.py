@@ -22,6 +22,15 @@ class MolecularProperties(utils.DotDict):
     """ Stores property values for a molecule.
     These objects will be generally created and updated by EnergyModels, not by users.
     """
+    __reduce_ex__ = None
+    __reduce__ = None
+
+    def __getstate__(self):
+        return self.__dict__.copy()
+
+    def __setstate__(self, state):
+        self.__dict__.update(state)
+
     def __init__(self, mol, **properties):
         """Initialization: ``properties`` MUST include positions.
 
