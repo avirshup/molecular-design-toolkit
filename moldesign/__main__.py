@@ -79,6 +79,7 @@ def main():
     subparsers.add_parser('copyexamples', help='Copy example notebooks')
     subparsers.add_parser('devbuild', help='rebuild required docker containers locally')
     subparsers.add_parser('devpull', help='Pull development images for latest release')
+    subparsers.add_parser('version', help='Write version string and exit')
 
     parser.add_argument('-f', '--config-file', type=str,
                         help='Path to config file')
@@ -107,6 +108,9 @@ def main():
 
     elif args.command == 'copyexamples':
         copy_example_dir(use_existing=False)
+
+    elif args.command == 'version':
+        print(MDTVERSION)
 
     elif args.command == 'config':
         print('Reading config file from: %s' % CONFIG_PATH)
